@@ -1,6 +1,5 @@
-1import pandas as pd
-
-# Runs scored by players in different matches
+Q1]
+import pandas as pd
 data = {
     "Match 1": [45, 60, 20, 80, 55],
     "Match 2": [30, 50, 40, 90, 65],
@@ -8,9 +7,328 @@ data = {
     "Match 4": [25, 45, 15, 100, 75],
 }
 players = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
-
-# Create the DataFrame
 performance = pd.DataFrame(data, index=players)
-
-# Display the first three rows
 print(performance.head(3))
+O/P:
+ Match 1  Match 2  Match 3  Match 4
+Player 1       45       30       70       25
+Player 2       60       50       20       45
+Player 3       20       40       35       15
+
+Q2]
+# Get the number of players and matches
+num_players, num_matches = performance.shape
+
+# Display the result
+print(f"Number of players: {num_players}")
+print(f"Number of matches: {num_matches}")
+O/P:
+Number of players: 5
+Number of matches: 4
+
+Q3]
+# List the match names and player names
+match_names = performance.columns.tolist()
+player_names = performance.index.tolist()
+# Display the result
+print("Match names:", match_names)
+print("Player names:", player_names)
+O/P:
+Match names: ['Match 1', 'Match 2', 'Match 3', 'Match 4']
+Player names: ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5']
+
+Q4]
+# Display the data type of the elements in the DataFrame
+print(performance.dtypes)
+O/P:
+Match 1    int64
+Match 2    int64
+Match 3    int64
+Match 4    int64
+DTYPE:OBJECT
+
+Q5]
+# Check if there are any missing values in the DataFrame
+missing_values = performance.isnull().sum()
+
+# Display the result
+print("Missing values in each column:")
+print(missing_values)
+O/P:
+Missing values in each column:
+Match 1    0
+Match 2    0
+Match 3    0
+Match 4    0
+dtype: int64
+
+Q6]
+# Retrieve the scores of "Player 4" across all matches
+player_4_scores = performance.loc["Player 4"]
+
+# Display the result
+print("Scores of Player 4 across all matches:")
+print(player_4_scores)
+O/P:
+Scores of Player 4 across all matches:
+Match 1     80
+Match 2     90
+Match 3     60
+Match 4    100
+Name: Player 4, dtype: int64
+
+Q7]
+# Extract the scores of all players in "Match 2"
+match_2_scores = performance["Match 2"]
+# Display the result
+print("Scores of all players in Match 2:")
+print(match_2_scores)
+O/P:
+Scores of all players in Match 2:
+Player 1    30
+Player 2    50
+Player 3    40
+Player 4    90
+Player 5    65
+Name: Match 2, dtype: int64
+
+Q8]
+# Retrieve the scores of "Player 1" and "Player 3" for "Match 1" and "Match 4"
+scores = performance.loc[["Player 1", "Player 3"], ["Match 1", "Match 4"]]
+# Display the result
+print("Scores of Player 1 and Player 3 for Match 1 and Match 4:")
+print(scores)
+O/P:
+Scores of Player 1 and Player 3 for Match 1 and Match 4:
+          Match 1  Match 4
+Player 1       45       25
+Player 3       20       15
+
+Q9]
+# Slice the DataFrame to get the first 3 players and the first 2 matches
+sliced_data = performance.iloc[:3, :2]
+# Display the result
+print("Scores for the first 3 players and the first 2 matches:")
+print(sliced_data)
+O/P:
+Scores for the first 3 players and the first 2 matches:
+          Match 1  Match 2
+Player 1       45       30
+Player 2       60       50
+Player 3       20       40
+
+Q10]
+1.# Retrieve the score of "Player 5" in "Match 3" using .loc
+player_5_score = performance.loc["Player 5", "Match 3"]
+# Display the result
+print("Score of Player 5 in Match 3 (using .loc):", player_5_score)
+O/P:
+Score of Player 5 in Match 3 (using .loc): 40
+2.# Retrieve the score of "Player 5" in "Match 3" using .iloc
+# Player 5 is at index 4 (0-based), and Match 3 is at index 2
+player_5_score = performance.iloc[4, 2]
+
+# Display the result
+print("Score of Player 5 in Match 3 (using .iloc):", player_5_score)
+O/P:
+Score of Player 5 in Match 3 (using .iloc): 40
+
+Q11]
+# Update the score of "Player 2" in "Match 4" to 50
+performance.loc["Player 2", "Match 4"] = 50
+# Display the updated DataFrame
+print("Updated performance DataFrame:")
+print(performance)
+O/P:
+Updated performance DataFrame:
+          Match 1  Match 2  Match 3  Match 4
+Player 1       45       30       70       25
+Player 2       60       50       20       50
+Player 3       20       40       35       15
+Player 4       80       90       60      100
+Player 5       55       65       40       75
+
+Q12]
+# Add a new player "Player 6" with scores [50, 40, 60, 70] in all matches
+performance.loc["Player 6"] = [50, 40, 60, 70]
+# Display the updated DataFrame
+print("Updated performance DataFrame with Player 6:")
+print(performance)
+O/P:
+Updated performance DataFrame with Player 6:
+          Match 1  Match 2  Match 3  Match 4
+Player 1       45       30       70       25
+Player 2       60       50       20       50
+Player 3       20       40       35       15
+Player 4       80       90       60      100
+Player 5       55       65       40       75
+Player 6       50       40       60       70
+
+Q13]
+# Add 10 bonus runs to all scores in the DataFrame
+performance = performance + 10
+# Display the updated DataFrame
+print("Updated performance DataFrame with bonus runs:")
+print(performance)
+O/P:
+Updated performance DataFrame with bonus runs:
+          Match 1  Match 2  Match 3  Match 4
+Player 1       55       40       80       35
+Player 2       70       60       30       60
+Player 3       30       50       45       25
+Player 4       90      100       70      110
+Player 5       65       75       50       85
+Player 6       60       50       70       80
+
+Q14]
+# Deduct 5 runs from the scores of "Player 3" in all matches
+performance.loc["Player 3"] = performance.loc["Player 3"] - 5
+# Display the updated DataFrame
+print("Updated performance DataFrame with 5 runs deducted from Player 3:")
+print(performance)
+O/P:
+Updated performance DataFrame with 5 runs deducted from Player 3:
+          Match 1  Match 2  Match 3  Match 4
+Player 1       55       40       80       35
+Player 2       70       60       30       60
+Player 3       25       45       40       20
+Player 4       90      100       70      110
+Player 5       65       75       50       85
+Player 6       60       50       70       80
+
+Q15]
+# Maximum score in each match
+max_score = 110
+# Calculate the percentage contribution of each player's score in each match
+percentage_contribution = (performance / max_score) * 100
+# Display the result
+print("Percentage contribution of each player’s score in each match:")
+print(percentage_contribution)
+o/p:
+Percentage contribution of each player’s score in each match:
+            Match 1    Match 2    Match 3    Match 4
+Player 1  40.909091  27.272727  63.636364  22.727273
+Player 2  54.545455  45.454545  18.181818  40.909091
+Player 3  18.181818  36.363636  31.818182  13.636364
+Player 4  72.727273  81.818182  54.545455  90.909091
+Player 5  50.000000  59.090909  36.363636  68.181818
+
+Q16]
+# Calculate the total runs scored by each player across all matches
+total_runs = performance.sum(axis=1)
+# Display the result
+print("Total runs scored by each player across all matches:")
+print(total_runs)
+o/p:
+Total runs scored by each player across all matches:
+Player 1    170
+Player 2    175
+Player 3    110
+Player 4    330
+Player 5    235
+dtype: int64
+
+Q17]
+# Calculate the total runs scored in each match
+total_runs_per_match = performance.sum(axis=0)
+# Display the result
+print("Total runs scored in each match:")
+print(total_runs_per_match)
+o/p:
+Total runs scored in each match:
+Match 1    260
+Match 2    275
+Match 3    225
+Match 4    260
+dtype: int64
+
+Q18]
+# Calculate the total runs scored by each player across all matches
+total_runs = performance.sum(axis=1)
+# Find the player with the highest total runs
+player_with_highest_runs = total_runs.idxmax()
+highest_runs = total_runs.max()
+# Display the result
+print(f"The player with the highest total runs is {player_with_highest_runs} with {highest_runs} runs.")
+o/p:
+The player with the highest total runs is Player 4 with 330 runs.
+
+Q19]
+# Calculate the total runs scored in each match
+total_runs_per_match = performance.sum(axis=0)
+# Identify the match with the lowest total runs
+match_with_lowest_runs = total_runs_per_match.idxmin()
+lowest_runs = total_runs_per_match.min()
+# Display the result
+print(f"The match with the lowest total runs is {match_with_lowest_runs} with {lowest_runs} runs.")
+o/p:
+The match with the lowest total runs is Match 3 with 225 runs.
+
+Q20]
+# Calculate the average runs scored by each player across all matches
+average_runs = performance.mean(axis=1)
+# Display the result
+print("Average runs scored by each player across all matches:")
+print(average_runs)
+o/p:
+Average runs scored by each player across all matches:
+Player 1    42.50
+Player 2    43.75
+Player 3    27.50
+Player 4    82.50
+Player 5    58.75
+dtype: float64
+Q21]
+# Calculate the total runs scored by each player and add as a new column
+performance["Total Runs"] = performance.sum(axis=1)
+# Display the updated DataFrame
+print("Updated performance DataFrame with Total Runs:")
+print(performance)
+o/p:
+Updated performance DataFrame with Total Runs:
+          Match 1  Match 2  Match 3  Match 4  Total Runs
+Player 1       45       30       70       25         170
+Player 2       60       50       20       45         175
+Player 3       20       40       35       15         110
+Player 4       80       90       60      100         330
+Player 5       55       65       40       75         235
+
+Q22]
+# Calculate the total runs scored by each player and add as a new column
+performance["Total Runs"] = performance.sum(axis=1)
+
+# Sort the DataFrame by the "Total Runs" column in descending order
+sorted_performance = performance.sort_values(by="Total Runs", ascending=False)
+
+# Display the sorted DataFrame
+print("Sorted performance DataFrame by Total Runs (Descending):")
+print(sorted_performance)
+o/p:
+Sorted performance DataFrame by Total Runs (Descending):
+          Match 1  Match 2  Match 3  Match 4  Total Runs
+Player 4       80       90       60      100         660
+Player 5       55       65       40       75         470
+Player 2       60       50       20       45         350
+Player 1       45       30       70       25         340
+Player 3       20       40       35       15         220
+
+Q23]
+# Calculate the total runs scored by each player and add as a new column
+performance["Total Runs"] = performance.sum(axis=1)
+
+# Filter the players who scored more than 200 runs
+players_above_200 = performance[performance["Total Runs"] > 200]
+
+# Display the result
+print("Players who scored more than 200 runs:")
+print(players_above_200)
+o/p:
+Players who scored more than 200 runs:
+          Match 1  Match 2  Match 3  Match 4  Total Runs
+Player 1       45       30       70       25         510
+Player 2       60       50       20       45         525
+Player 3       20       40       35       15         330
+Player 4       80       90       60      100         990
+Player 5       55       65       40       75         705
+
+
