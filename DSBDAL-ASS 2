@@ -1,0 +1,16 @@
+1import pandas as pd
+
+# Runs scored by players in different matches
+data = {
+    "Match 1": [45, 60, 20, 80, 55],
+    "Match 2": [30, 50, 40, 90, 65],
+    "Match 3": [70, 20, 35, 60, 40],
+    "Match 4": [25, 45, 15, 100, 75],
+}
+players = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
+
+# Create the DataFrame
+performance = pd.DataFrame(data, index=players)
+
+# Display the first three rows
+print(performance.head(3))
