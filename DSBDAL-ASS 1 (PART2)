@@ -1,0 +1,257 @@
+Q1: Write a Python script to download or load the dataset into a Pandas DataFrame. 
+Q2: Load the dataset into a Pandas DataFrame and display the first five rows. What initial insights can you gather from this data?
+Q3: Check the number of rows and columns in the dataset using Pandas functions. Q4: Identify missing values in the dataset using the isnull() function. Which columns have missing values, and how many? 
+Q5: Generate summary statistics of the dataset using the describe() function. Explain what insights you derive from the statistical summary.
+Q6: List all the variable names and their data types. Provide a brief description of each variable and its significance in evaluating player performance.
+Q7: Identify variables with incorrect data types (e.g., numerical values stored as strings). Write a Python script to convert these variables into the correct format.
+Q8: Explain why data type conversion is necessary for accurate performance analysis. Provide an example from your dataset where type conversion improves data usability.
+    
+    
+NAME:SHIVANI GADKARI
+ROLL NO: 13342
+
+import pandas as  pd
+
+# Q1: Write a Python script to download or load the dataset into a Pandas DataFrame.
+csv_file = pd.read_csv("ODI_Match_Results.csv")
+print(csv_file)
+print()
+
+# Q2: Load the dataset into a Pandas DataFrame and display the first five rows. What initial insights can you gather from this data?
+print('Display the first five rows : ')
+print(csv_file.head())
+print()
+
+# Q3: Check the number of rows and columns in the dataset using Pandas functions.
+print('Number of rows and columns in the dataset : ',end = '')
+print(csv_file.shape)
+print()
+
+# Q4: Identify missing values in the dataset using the isnull() function. Which columns have missing values, and how many?
+print('mMissing values in the dataset : ',end='')
+print(csv_file.isnull().sum())
+print()
+
+# Q5: Generate summary statistics of the dataset using the describe() function. Explain what insights you derive from the statistical summary.
+print('Summary statistics of the dataset : ')
+print(csv_file.describe())
+print()
+
+# Q6: List all the variable names and their data types. Provide a brief description of each variable and its significance in evaluating player performance.
+print('List of all the variable names and their data types : ')
+print(csv_file.dtypes)
+print()
+
+#Q7: Identify variables with incorrect data types (e.g., numerical values stored as strings). Write a Python script to convert these variables into the correct format.
+
+
+ #Q8: Explain why data type conversion is necessary for accurate performance analysis. Provide an example from your dataset where type conversion improves data usability.
+    
+
+O/P:-
+
+PS C:\Users\Welcome\Desktop>  & 'd:\anaconda\python.exe' 'c:\Users\Welcome\.vscode\extensions\ms-python.debugpy-2024.14.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher' '50171' '--' 'C:\Users\Welcome\Desktop\PYTHON.py'
+      Unnamed: 0 Result     Margin   BR  Toss  Bat   Opposition      Ground   Start Date     Match_ID      Country  Country_ID
+0            418    won    85 runs  NaN  lost  1st      v India     Kolkata   3 Jan 2013   ODI # 3315     Pakistan           7
+1            692   lost    85 runs  NaN   won  2nd   v Pakistan     Kolkata   3 Jan 2013   ODI # 3315        India           6
+2            419   lost    10 runs  NaN  lost  2nd      v India       Delhi   6 Jan 2013   ODI # 3316     Pakistan           7
+3            693    won    10 runs  NaN   won  1st   v Pakistan       Delhi   6 Jan 2013   ODI # 3316        India           6
+4            121   lost   107 runs  NaN  lost  2nd  v Australia   Melbourne  11 Jan 2013   ODI # 3317     SriLanka           8
+...          ...    ...        ...  ...   ...  ...          ...         ...          ...          ...          ...         ...
+1317         997    won  3 wickets  3.0   won  2nd   v Pakistan  Nottingham  17 May 2019   ODI # 4138      England           1
+1318         282   aban          -  NaN     -    -   v Scotland   Edinburgh  18 May 2019  ODI # 4138a     SriLanka           8
+1319        1322      -          -  NaN   won  2nd    v Ireland     Belfast  19 May 2019   ODI # 4139  Afghanistan          40
+1320         559      -          -  NaN  lost  2nd    v England       Leeds  19 May 2019   ODI # 4140     Pakistan           7
+1321         998      -          -  NaN   won  1st   v Pakistan       Leeds  19 May 2019   ODI # 4140      England           1
+
+[1322 rows x 12 columns]
+
+Display the first five rows :
+   Unnamed: 0 Result    Margin  BR  Toss  Bat   Opposition     Ground   Start Date    Match_ID   Country  Country_ID
+0         418    won   85 runs NaN  lost  1st      v India    Kolkata   3 Jan 2013  ODI # 3315  Pakistan           7
+1         692   lost   85 runs NaN   won  2nd   v Pakistan    Kolkata   3 Jan 2013  ODI # 3315     India           6
+2         419   lost   10 runs NaN  lost  2nd      v India      Delhi   6 Jan 2013  ODI # 3316  Pakistan           7
+3         693    won   10 runs NaN   won  1st   v Pakistan      Delhi   6 Jan 2013  ODI # 3316     India           6
+4         121   lost  107 runs NaN  lost  2nd  v Australia  Melbourne  11 Jan 2013  ODI # 3317  SriLanka           8
+
+Number of rows and columns in the dataset : (1322, 12)
+
+mMissing values in the dataset : Unnamed: 0      0
+Result          0
+Margin          0
+BR            716
+Toss            0
+Bat             0
+Opposition      0
+Ground          0
+Start Date      0
+Match_ID        0
+Country         0
+Country_ID      0
+dtype: int64
+
+Summary statistics of the dataset :
+        Unnamed: 0          BR   Country_ID
+count  1322.000000  606.000000  1322.000000
+mean    661.500000   51.409241     8.560514
+std     381.772838   55.924337    10.337003
+min       1.000000    0.000000     1.000000
+25%     331.250000   10.000000     3.000000
+50%     661.500000   30.500000     5.000000
+75%     991.750000   75.000000     8.000000
+max    1322.000000  250.000000    40.000000
+
+List of all the variable names and their data types :
+Unnamed: 0      int64
+Result         object
+Margin         object
+BR            float64
+Toss           object
+Bat            object
+Opposition     object
+Ground         object
+Match_ID       object
+Country_ID      int64
+dtype: object
+
+PS C:\Users\Welcome\Desktop> ^C
+PS C:\Users\Welcome\Desktop>
+PS C:\Users\Welcome\Desktop>  c:; cd 'c:\Users\Welcome\Desktop'; & 'd:\anaconda\python.exe' 'c:\Users\Welcome\.vscode\extensions\ms-python.debugpy-2024.14.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher' '50210' '--' 'C:\Users\Welcome\Desktop\PYTHON.py' 
+      Unnamed: 0 Result     Margin   BR  Toss  Bat   Opposition      Ground   Start Date     Match_ID      Country  Country_ID
+0            418    won    85 runs  NaN  lost  1st      v India     Kolkata   3 Jan 2013   ODI # 3315     Pakistan           7
+1            692   lost    85 runs  NaN   won  2nd   v Pakistan     Kolkata   3 Jan 2013   ODI # 3315        India           6
+2            419   lost    10 runs  NaN  lost  2nd      v India       Delhi   6 Jan 2013   ODI # 3316     Pakistan           7
+3            693    won    10 runs  NaN   won  1st   v Pakistan       Delhi   6 Jan 2013   ODI # 3316        India           6
+4            121   lost   107 runs  NaN  lost  2nd  v Australia   Melbourne  11 Jan 2013   ODI # 3317     SriLanka           8
+...          ...    ...        ...  ...   ...  ...          ...         ...          ...          ...          ...         ...
+1317         997    won  3 wickets  3.0   won  2nd   v Pakistan  Nottingham  17 May 2019   ODI # 4138      England           1
+1318         282   aban          -  NaN     -    -   v Scotland   Edinburgh  18 May 2019  ODI # 4138a     SriLanka           8
+1319        1322      -          -  NaN   won  2nd    v Ireland     Belfast  19 May 2019   ODI # 4139  Afghanistan          40
+1320         559      -          -  NaN  lost  2nd    v England       Leeds  19 May 2019   ODI # 4140     Pakistan           7
+1321         998      -          -  NaN   won  1st   v Pakistan       Leeds  19 May 2019   ODI # 4140      England           1
+
+[1322 rows x 12 columns]
+
+Display the first five rows :
+   Unnamed: 0 Result    Margin  BR  Toss  Bat   Opposition     Ground   Start Date    Match_ID   Country  Country_ID
+0         418    won   85 runs NaN  lost  1st      v India    Kolkata   3 Jan 2013  ODI # 3315  Pakistan           7
+1         692   lost   85 runs NaN   won  2nd   v Pakistan    Kolkata   3 Jan 2013  ODI # 3315     India           6
+2         419   lost   10 runs NaN  lost  2nd      v India      Delhi   6 Jan 2013  ODI # 3316  Pakistan           7
+3         693    won   10 runs NaN   won  1st   v Pakistan      Delhi   6 Jan 2013  ODI # 3316     India           6
+4         121   lost  107 runs NaN  lost  2nd  v Australia  Melbourne  11 Jan 2013  ODI # 3317  SriLanka           8
+
+Number of rows and columns in the dataset : (1322, 12)
+
+mMissing values in the dataset : Unnamed: 0      0
+Result          0
+Margin          0
+BR            716
+Toss            0
+Bat             0
+Opposition      0
+Ground          0
+Start Date      0
+Match_ID        0
+Country         0
+Country_ID      0
+dtype: int64
+
+Summary statistics of the dataset :
+        Unnamed: 0          BR   Country_ID
+count  1322.000000  606.000000  1322.000000
+mean    661.500000   51.409241     8.560514
+std     381.772838   55.924337    10.337003
+min       1.000000    0.000000     1.000000
+25%     331.250000   10.000000     3.000000
+50%     661.500000   30.500000     5.000000
+75%     991.750000   75.000000     8.000000
+max    1322.000000  250.000000    40.000000
+
+List of all the variable names and their data types :
+Unnamed: 0      int64
+Result         object
+Margin         object
+BR            float64
+Toss           object
+Bat            object
+Opposition     object
+Ground         object
+Start Date     object
+Match_ID       object
+Country        object
+dtype: object
+
+Column 'Score' does not exist in the dataset.
+
+PS C:\Users\Welcome\Desktop> ^C
+PS C:\Users\Welcome\Desktop>
+PS C:\Users\Welcome\Desktop>  c:; cd 'c:\Users\Welcome\Desktop'; & 'd:\anaconda\python.exe' 'c:\Users\Welcome\.vscode\extensions\ms-python.debugpy-2024.14.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher' '50221' '--' 'C:\Users\Welcome\Desktop\PYTHON.py' 
+      Unnamed: 0 Result     Margin   BR  Toss  Bat   Opposition      Ground   Start Date     Match_ID      Country  Country_ID
+0            418    won    85 runs  NaN  lost  1st      v India     Kolkata   3 Jan 2013   ODI # 3315     Pakistan           7
+1            692   lost    85 runs  NaN   won  2nd   v Pakistan     Kolkata   3 Jan 2013   ODI # 3315        India           6
+2            419   lost    10 runs  NaN  lost  2nd      v India       Delhi   6 Jan 2013   ODI # 3316     Pakistan           7
+3            693    won    10 runs  NaN   won  1st   v Pakistan       Delhi   6 Jan 2013   ODI # 3316        India           6
+4            121   lost   107 runs  NaN  lost  2nd  v Australia   Melbourne  11 Jan 2013   ODI # 3317     SriLanka           8
+...          ...    ...        ...  ...   ...  ...          ...         ...          ...          ...          ...         ...
+1317         997    won  3 wickets  3.0   won  2nd   v Pakistan  Nottingham  17 May 2019   ODI # 4138      England           1
+1318         282   aban          -  NaN     -    -   v Scotland   Edinburgh  18 May 2019  ODI # 4138a     SriLanka           8
+1319        1322      -          -  NaN   won  2nd    v Ireland     Belfast  19 May 2019   ODI # 4139  Afghanistan          40
+1320         559      -          -  NaN  lost  2nd    v England       Leeds  19 May 2019   ODI # 4140     Pakistan           7
+1321         998      -          -  NaN   won  1st   v Pakistan       Leeds  19 May 2019   ODI # 4140      England           1
+
+[1322 rows x 12 columns]
+
+Display the first five rows :
+   Unnamed: 0 Result    Margin  BR  Toss  Bat   Opposition     Ground   Start Date    Match_ID   Country  Country_ID
+0         418    won   85 runs NaN  lost  1st      v India    Kolkata   3 Jan 2013  ODI # 3315  Pakistan           7
+1         692   lost   85 runs NaN   won  2nd   v Pakistan    Kolkata   3 Jan 2013  ODI # 3315     India           6
+2         419   lost   10 runs NaN  lost  2nd      v India      Delhi   6 Jan 2013  ODI # 3316  Pakistan           7
+3         693    won   10 runs NaN   won  1st   v Pakistan      Delhi   6 Jan 2013  ODI # 3316     India           6
+4         121   lost  107 runs NaN  lost  2nd  v Australia  Melbourne  11 Jan 2013  ODI # 3317  SriLanka           8
+
+Number of rows and columns in the dataset : (1322, 12)
+
+mMissing values in the dataset : Unnamed: 0      0
+Result          0
+Margin          0
+BR            716
+Toss            0
+Bat             0
+Opposition      0
+Ground          0
+Start Date      0
+Match_ID        0
+Country         0
+Country_ID      0
+dtype: int64
+
+Summary statistics of the dataset :
+        Unnamed: 0          BR   Country_ID
+count  1322.000000  606.000000  1322.000000
+mean    661.500000   51.409241     8.560514
+std     381.772838   55.924337    10.337003
+min       1.000000    0.000000     1.000000
+25%     331.250000   10.000000     3.000000
+50%     661.500000   30.500000     5.000000
+75%     991.750000   75.000000     8.000000
+max    1322.000000  250.000000    40.000000
+
+List of all the variable names and their data types :
+Unnamed: 0      int64
+Result         object
+Margin         object
+BR            float64
+Toss           object
+Bat            object
+Opposition     object
+Ground         object
+Start Date     object
+Match_ID       object
+Country        object
+Country_ID      int64
+dtype: object
+
+
+Column 'Score' does not exist in the dataset.
+
+PS C:\Users\Welcome\Desktop> 
