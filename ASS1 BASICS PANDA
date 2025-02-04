@@ -1,3 +1,39 @@
+A cricket team tracks the performance of its players in multiple matches. The data is stored in a Pandas DataFrame where rows represent players and columns represent matches:
+import pandas as pd
+# Runs scored by players in different matches
+data = {
+    "Match 1": [45, 60, 20, 80, 55],
+    "Match 2": [30, 50, 40, 90, 65],
+    "Match 3": [70, 20, 35, 60, 40],
+    "Match 4": [25, 45, 15, 100, 75],
+}
+players = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
+performance = pd.DataFrame(data, index=players)
+1  Display the first three rows of the performance DataFrame.
+2 Get the number of players and matches recorded in the DataFrame
+3 List the match names and player names.
+4 Display the data type of the elements in the DataFrame.
+5 Check if there are any missing values in the DataFrame.
+6 Retrieve the scores of "Player 4" across all matches.
+7 Extract the scores of all players in "Match 2".
+8  Retrieve the scores of "Player 1" and "Player 3" for "Match 1" and "Match 4".  
+9 Slice the DataFrame to get the first 3 players and the first 2 matches.
+10  Find the score of "Player 5" in "Match 3" using .loc or .iloc.
+11 Update the score of "Player 2" in "Match 4" to 50.
+12Add a new player, "Player 6", with scores [50, 40, 60, 70] in all matches.
+13  Add 10 bonus runs to all scores in the DataFrame.
+14Deduct 5 runs from the scores of "Player 3" in all matches.
+15Calculate the percentage contribution of each player’s score in a match, assuming the maximum possible score in each match is 120 runs.
+16   Calculate the total runs scored by each player across all matches.
+17Determine the total runs scored in each match.
+18 Find the player with the highest total runs.
+19Identify the match with the lowest total runs.
+20Compute the average runs scored by each player across all matches.
+21Add a new column called "Total Runs" that displays the total runs scored by each player.
+22Sort the DataFrame by the "Total Runs" column in descending order.
+23Filter the players who scored a total of more than 200 runs.
+ 
+
 Q1]
 import pandas as pd
 data = {
