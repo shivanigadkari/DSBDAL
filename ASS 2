@@ -1,0 +1,268 @@
+ASS 2
+import pandas as pd
+df=pd.read_csv('student1.csv')
+df
+	maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.0	70	2021	1
+1	69	67	78.0	79	2018	2
+2	75	64	62.0	60	2021	1
+3	77	76	63.0	79	2019	2
+4	70	70	69.0	80	2019	2
+5	61	78	78.0	65	2019	1
+6	94	66	68.0	72	2018	1
+7	73	61	NaN	76	2018	2
+8	70	73	62.0	76	2020	2
+9	71	66	69.0	67	2020	1
+10	73	65	76.0	94	2019	3
+11	63	61	74.0	69	2018	1
+12	77	60	69.0	77	2018	2
+13	76	66	72.0	63	2020	1
+14	69	60	64.0	66	2019	1
+15	79	72	73.0	78	2020	2
+16	74	74	76.0	75	2020	2
+17	70	78	73.0	68	2020	1
+18	75	63	80.0	62	2020	1
+19	72	75	64.0	69	2019	1
+20	60	70	60.0	69	2019	1
+21	79	76	79.0	64	2019	1
+22	75	76	68.0	77	2019	2
+23	62	68	75.0	65	2019	1
+24	66	72	61.0	73	2021	1
+25	65	79	71.0	61	2018	1
+26	70	80	67.0	66	2020	1
+27	78	63	80.0	74	2020	1
+28	69	72	62.0	62	2021	1
+
+df.isnull()
+	maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	False	False	False	False	False	False
+1	False	False	False	False	False	False
+2	False	False	False	False	False	False
+3	False	False	False	False	False	False
+4	False	False	False	False	False	False
+5	False	False	False	False	False	False
+6	False	False	False	False	False	False
+7	False	False	True	False	False	False
+8	False	False	False	False	False	False
+9	False	False	False	False	False	False
+10	False	False	False	False	False	False
+11	False	False	False	False	False	False
+12	False	False	False	False	False	False
+13	False	False	False	False	False	False
+14	False	False	False	False	False	False
+15	False	False	False	False	False	False
+16	False	False	False	False	False	False
+17	False	False	False	False	False	False
+18	False	False	False	False	False	False
+19	False	False	False	False	False	False
+20	False	False	False	False	False	False
+21	False	False	False	False	False	False
+22	False	False	False	False	False	False
+23	False	False	False	False	False	False
+24	False	False	False	False	False	False
+25	False	False	False	False	False	False
+26	False	False	False	False	False	False
+27	False	False	False	False	False	False
+28	False	False	False	False	False	False
+
+series=pd.isnull(df["writing_score"])
+df[series]
+	maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+7	73	61	NaN	76	2018	2
+
+df.notnull()
+maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	True	True	True	True	True	True
+1	True	True	True	True	True	True
+2	True	True	True	True	True	True
+3	True	True	True	True	True	True
+4	True	True	True	True	True	True
+5	True	True	True	True	True	True
+6	True	True	True	True	True	True
+7	True	True	False	True	True	True
+8	True	True	True	True	True	True
+9	True	True	True	True	True	True
+10	True	True	True	True	True	True
+11	True	True	True	True	True	True
+12	True	True	True	True	True	True
+13	True	True	True	True	True	True
+14	True	True	True	True	True	True
+15	True	True	True	True	True	True
+16	True	True	True	True	True	True
+17	True	True	True	True	True	True
+18	True	True	True	True	True	True
+19	True	True	True	True	True	True
+20	True	True	True	True	True	True
+21	True	True	True	True	True	True
+22	True	True	True	True	True	True
+23	True	True	True	True	True	True
+24	True	True	True	True	True	True
+25	True	True	True	True	True	True
+26	True	True	True	True	True	True
+27	True	True	True	True	True	True
+28	True	True	True	True	True	True
+
+writing_score
+series=pd.notnull(df["writing_score"])
+df[series]
+maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.0	70	2021	1
+1	69	67	78.0	79	2018	2
+2	75	64	62.0	60	2021	1
+3	77	76	63.0	79	2019	2
+4	70	70	69.0	80	2019	2
+5	61	78	78.0	65	2019	1
+6	94	66	68.0	72	2018	1
+8	70	73	62.0	76	2020	2
+9	71	66	69.0	67	2020	1
+10	73	65	76.0	94	2019	3
+11	63	61	74.0	69	2018	1
+12	77	60	69.0	77	2018	2
+13	76	66	72.0	63	2020	1
+14	69	60	64.0	66	2019	1
+15	79	72	73.0	78	2020	2
+16	74	74	76.0	75	2020	2
+17	70	78	73.0	68	2020	1
+18	75	63	80.0	62	2020	1
+19	72	75	64.0	69	2019	1
+20	60	70	60.0	69	2019	1
+21	79	76	79.0	64	2019	1
+22	75	76	68.0	77	2019	2
+23	62	68	75.0	65	2019	1
+24	66	72	61.0	73	2021	1
+25	65	79	71.0	61	2018	1
+26	70	80	67.0	66	2020	1
+27	78	63	80.0	74	2020	1
+28	69	72	62.0	62	2021	1
+
+ndf=df
+ndf.fillna(0)
+maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.0	70	2021	1
+1	69	67	78.0	79	2018	2
+2	75	64	62.0	60	2021	1
+3	77	76	63.0	79	2019	2
+4	70	70	69.0	80	2019	2
+5	61	78	78.0	65	2019	1
+6	94	66	68.0	72	2018	1
+7	73	61	0.0	76	2018	2
+8	70	73	62.0	76	2020	2
+9	71	66	69.0	67	2020	1
+10	73	65	76.0	94	2019	3
+11	63	61	74.0	69	2018	1
+12	77	60	69.0	77	2018	2
+13	76	66	72.0	63	2020	1
+14	69	60	64.0	66	2019	1
+15	79	72	73.0	78	2020	2
+16	74	74	76.0	75	2020	2
+17	70	78	73.0	68	2020	1
+18	75	63	80.0	62	2020	1
+19	72	75	64.0	69	2019	1
+20	60	70	60.0	69	2019	1
+21	79	76	79.0	64	2019	1
+22	75	76	68.0	77	2019	2
+23	62	68	75.0	65	2019	1
+24	66	72	61.0	73	2021	1
+25	65	79	71.0	61	2018	1
+26	70	80	67.0	66	2020	1
+27	78	63	80.0	74	2020	1
+28	69	72	62.0	62	2021	1
+
+m_v=df['writing_score'].mean()
+df['writing_score'].fillna(value=m_v, inplace=True)
+df
+maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.000000	70	2021	1
+1	69	67	78.000000	79	2018	2
+2	75	64	62.000000	60	2021	1
+3	77	76	63.000000	79	2019	2
+4	70	70	69.000000	80	2019	2
+5	61	78	78.000000	65	2019	1
+6	94	66	68.000000	72	2018	1
+7	73	61	70.357143	76	2018	2
+8	70	73	62.000000	76	2020	2
+9	71	66	69.000000	67	2020	1
+10	73	65	76.000000	94	2019	3
+11	63	61	74.000000	69	2018	1
+12	77	60	69.000000	77	2018	2
+13	76	66	72.000000	63	2020	1
+14	69	60	64.000000	66	2019	1
+15	79	72	73.000000	78	2020	2
+16	74	74	76.000000	75	2020	2
+17	70	78	73.000000	68	2020	1
+18	75	63	80.000000	62	2020	1
+19	72	75	64.000000	69	2019	1
+20	60	70	60.000000	69	2019	1
+21	79	76	79.000000	64	2019	1
+22	75	76	68.000000	77	2019	2
+23	62	68	75.000000	65	2019	1
+24	66	72	61.000000	73	2021	1
+25	65	79	71.000000	61	2018	1
+26	70	80	67.000000	66	2020	1
+27	78	63	80.000000	74	2020	1
+28	69	72	62.000000	62	2021	1
+
+ndf.dropna()
+	maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.000000	70	2021	1
+1	69	67	78.000000	79	2018	2
+2	75	64	62.000000	60	2021	1
+3	77	76	63.000000	79	2019	2
+4	70	70	69.000000	80	2019	2
+5	61	78	78.000000	65	2019	1
+6	94	66	68.000000	72	2018	1
+7	73	61	70.357143	76	2018	2
+8	70	73	62.000000	76	2020	2
+9	71	66	69.000000	67	2020	1
+10	73	65	76.000000	94	2019	3
+11	63	61	74.000000	69	2018	1
+12	77	60	69.000000	77	2018	2
+13	76	66	72.000000	63	2020	1
+14	69	60	64.000000	66	2019	1
+15	79	72	73.000000	78	2020	2
+16	74	74	76.000000	75	2020	2
+17	70	78	73.000000	68	2020	1
+18	75	63	80.000000	62	2020	1
+19	72	75	64.000000	69	2019	1
+20	60	70	60.000000	69	2019	1
+21	79	76	79.000000	64	2019	1
+22	75	76	68.000000	77	2019	2
+23	62	68	75.000000	65	2019	1
+24	66	72	61.000000	73	2021	1
+25	65	79	71.000000	61	2018	1
+26	70	80	67.000000	66	2020	1
+27	78	63	80.000000	74	2020	1
+28	69	72	62.000000	62	2021	1
+
+new_data = ndf.dropna(axis = 0, how ='any')
+new_data
+maths_score	reading_score	writing_score	placement_score	club_join_year	placement_offer_count
+0	60	70	77.000000	70	2021	1
+1	69	67	78.000000	79	2018	2
+2	75	64	62.000000	60	2021	1
+3	77	76	63.000000	79	2019	2
+4	70	70	69.000000	80	2019	2
+5	61	78	78.000000	65	2019	1
+6	94	66	68.000000	72	2018	1
+7	73	61	70.357143	76	2018	2
+8	70	73	62.000000	76	2020	2
+9	71	66	69.000000	67	2020	1
+10	73	65	76.000000	94	2019	3
+11	63	61	74.000000	69	2018	1
+12	77	60	69.000000	77	2018	2
+13	76	66	72.000000	63	2020	1
+14	69	60	64.000000	66	2019	1
+15	79	72	73.000000	78	2020	2
+16	74	74	76.000000	75	2020	2
+17	70	78	73.000000	68	2020	1
+18	75	63	80.000000	62	2020	1
+19	72	75	64.000000	69	2019	1
+20	60	70	60.000000	69	2019	1
+21	79	76	79.000000	64	2019	1
+22	75	76	68.000000	77	2019	2
+23	62	68	75.000000	65	2019	1
+24	66	72	61.000000	73	2021	1
+25	65	79	71.000000	61	2018	1
+26	70	80	67.000000	66	2020	1
+27	78	63	80.000000	74	2020	1
+28	69	72	62.000000	62	2021	1
