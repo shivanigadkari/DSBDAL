@@ -37,18 +37,6 @@ location \
 
 import pandas as pd
 # Example: Loading from CSV
- df = pd.read_csv("Housing.csv")
-# Example: Loading from a Python object
-class Housing:
- df = pd.read_csv("Housing.csv")
-df = pd.DataFrame(Housing.df)
- Cell In[8], line 3
- df = pd.read_csv("Housing.csv")
- ^
-IndentationError: unexpected indent
-
-import pandas as pd
-# Example: Loading from CSV
 df = pd.read_csv("Housing.csv")
 # Example: Loading from a Python object
 class Housing:
@@ -72,27 +60,33 @@ bath 73
 balcony 609
 price 0
 dtype: int64
+
 x = df.drop(['price'], axis=1)
 y = df['price']
 from sklearn.model_selection import train_test_split
 xtrain, xtest, ytrain, ytest =train_test_split(x, y, test_size 
 =0.2,random_state = 0)
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['area_type'] = le.fit_transform(df['area_type'])
 newdf=df
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['availability'] = le.fit_transform(df['availability'])
 newdf=df
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['location'] = le.fit_transform(df['location'])
 newdf=df
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['size'] = le.fit_transform(df['size'])
 newdf=df
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['society'] = le.fit_transform(df['society'])
@@ -136,6 +130,7 @@ bath \
 13318 1.0 488.00 3 
 13319 1.0 17.00 3 
 [13320 rows x 10 columns]
+# CONVERTING CATEGORICAL VARIABLE INTO BINARY:
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, 
