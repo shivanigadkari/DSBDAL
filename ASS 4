@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
- df=pd.read_csv("Housing.csv")
+O/P:
+df=pd.read_csv("Housing.csv")
 df
  area_type availability 
 location \
@@ -33,6 +34,7 @@ location \
 13318 4 BHK SollyCl 4689 4.0 1.0 488.00 
 13319 1 BHK NaN 550 1.0 1.0 17.00 
 [13320 rows x 9 columns]
+
 import pandas as pd
 # Example: Loading from CSV
  df = pd.read_csv("Housing.csv")
@@ -44,6 +46,7 @@ df = pd.DataFrame(Housing.df)
  df = pd.read_csv("Housing.csv")
  ^
 IndentationError: unexpected indent
+
 import pandas as pd
 # Example: Loading from CSV
 df = pd.read_csv("Housing.csv")
@@ -54,6 +57,7 @@ class Housing:
 # Now you can access the `df` attribute from the Housing class
 df = pd.DataFrame(Housing.df)
 df.columns
+O/P:
 Index(['area_type', 'availability', 'location', 'size', 'society',
  'total_sqft', 'bath', 'balcony', 'price'],
  dtype='object')
@@ -94,7 +98,8 @@ le = LabelEncoder()
 df['society'] = le.fit_transform(df['society'])
 newdf=df
 df
- area_type availability location size society total_sqft 
+O/P:
+area_type availability location size society total_sqft 
 bath \
 0 3 40 419 13 464 1056 
 2.0 
@@ -137,6 +142,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(x, y,
 test_size=0.4,random_state=10)
 from sklearn.linear_model import LinearRegression
 print(df.dtypes)
+O/P:
 area_type int64
 availability int32
 location int32
@@ -148,11 +154,13 @@ balcony float64
 price float64
 are_type int32
 dtype: object
+
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df['total_sqft'] = le.fit_transform(df['total_sqft' ])
 newdf=df
 print(df.dtypes)
+O/P:
 area_type int64
 availability int32
 location int32
@@ -164,8 +172,10 @@ balcony float64
 price float64
 are_type int32
 dtype: object
+
 print(X_train.head()) # Check if any columns are still categorical
- area_type availability location size 
+O/P:
+area_type availability location size 
 society \
 2022 Super built-up Area Ready To Move Doddanekundi 3 BHK 
 AkletBa 
@@ -183,6 +193,7 @@ S
 3104 2430 4.0 3.0 
 12487 1150 2.0 0.0 
 5897 1088 2.0 2.0 
+
 X_train = pd.get_dummies(X_train, drop_first=True)
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -205,7 +216,9 @@ X_test = pd.get_dummies(X_test, drop_first=True)
 # Create and train the linear regression model
 lm = LinearRegression()
 lm.fit(X_train, Y_train)
+O/P:
 LinearRegression()
+
 Y_pred = lm.predict(X_test)
 print("Predictions:", Y_pred)
 Predictions: [ 46.61943271 124.36567869 47.99075956 ... 132.29835756 
@@ -224,8 +237,10 @@ mse = mean_squared_error(Y_test, Ytest_pred)
 print(mse)
 mse = mean_squared_error(Ytrain_pred,Y_train)
 print (mse)
+O/P:
 15042.627983565915
 12708.433216734145
+
 plt.scatter(Y_train, Ytrain_pred, c='blue', marker='o', 
 label='Training data')
 plt.scatter(Y_test, Ytest_pred, c='lightgreen', marker='s', 
@@ -235,6 +250,8 @@ plt.ylabel('Predicted values')
 plt.title("True values vs Predicted values")
 plt.legend(loc='upper left')
 plt.show()
+O/P: graph will br shown after running this command
+
 #2.Algorithm (Synthesis Dataset):
 import pandas as pd
 import numpy as np
@@ -243,19 +260,27 @@ x=np.array([95,85,80,70,60])
 y=np.array([85,95,70,65,70])
 model= np.polyfit(x, y, 1)
 model
+o/p:
 array([ 0.64383562, 26.78082192])
+
 predict = np.poly1d(model)
 predict(65)
+o/p:
 68.63013698630137
+
 y_pred= predict(x)
 y_pred
+o/p:
 array([87.94520548, 81.50684932, 78.28767123, 71.84931507, 
 65.4109589 ])
+
 from sklearn.metrics import r2_score
 r2_score(y, y_pred)
+o/p:
 0.4803218090889326
+
 y_line = model[1] + model[0]* x
 plt.plot(x, y_line, c = 'r')
 plt.scatter(x, y_pred)
 plt.scatter(x,y,c='r')
-<matplotlib.collections.PathCollection at 0x184dcb17dd0>
+o/p: graph will be shown
